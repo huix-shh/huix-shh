@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-labelledby="title desc">
+  <title id="title">Public ACRN Hypervisor work</title>
+  <desc id="desc">Eight merged pull requests to the ACRN Hypervisor, with representative work in static analysis cleanup, dead-code removal, and coding-guideline fixes.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071012"/><stop offset=".6" stop-color="#0b1719"/><stop offset="1" stop-color="#11142a"/></linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#79f2c0"/><stop offset=".55" stop-color="#69d7e8"/><stop offset="1" stop-color="#b8a2ff"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a8ffda" stroke-opacity=".045"/></pattern>
+    <style>.sans{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:"SFMono-Regular",Consolas,monospace}</style>
+  </defs>
+  <rect width="1200" height="400" rx="26" fill="url(#bg)"/><rect width="1200" height="400" rx="26" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="398" rx="25" fill="none" stroke="#79f2c0" stroke-opacity=".22"/>
+  <g transform="translate(52 48)">
+    <text class="mono" x="0" y="0" fill="#79f2c0" font-size="16" letter-spacing="2">PUBLIC EVIDENCE / ACRN HYPERVISOR</text>
+    <text class="sans" x="0" y="46" fill="#e8fff5" font-size="30" font-weight="750">ACRN Hypervisor · 8 merged pull requests</text>
+    <text class="sans" x="0" y="79" fill="#9bb6ad" font-size="16">Public upstream changes focused on code quality and maintainability.</text>
+  </g>
+  <g transform="translate(52 166)">
+    <rect width="245" height="180" rx="22" fill="#102a26" stroke="#79f2c0" stroke-opacity=".48"/>
+    <text class="sans" x="28" y="93" fill="url(#accent)" font-size="82" font-weight="800">8</text>
+    <text class="mono" x="122" y="67" fill="#a8ffda" font-size="16" letter-spacing="1.2">MERGED</text>
+    <text class="sans" x="122" y="94" fill="#e8fff5" font-size="22" font-weight="700">pull requests</text>
+    <text class="mono" x="28" y="145" fill="#78988f" font-size="16" letter-spacing="1.4">PUBLIC · REVIEWED · TRACEABLE</text>
+  </g>
+  <g transform="translate(323 166)">
+    <rect width="825" height="180" rx="22" fill="#0d1b1d" stroke="#a8ffda" stroke-opacity=".16"/>
+    <path d="M38 47H787M38 95H787M38 143H787" stroke="#a8ffda" stroke-opacity=".1"/>
+    <circle cx="42" cy="36" r="6" fill="#79f2c0"/><text class="mono" x="62" y="40" fill="#79f2c0" font-size="16">#3342</text><text class="sans" x="133" y="40" fill="#e8fff5" font-size="16" font-weight="650">vCPU cleanup for static analysis</text><text class="mono" x="756" y="40" fill="#78988f" font-size="16">MERGED</text>
+    <circle cx="42" cy="84" r="6" fill="#69d7e8"/><text class="mono" x="62" y="88" fill="#69d7e8" font-size="16">#3373</text><text class="sans" x="133" y="88" fill="#e8fff5" font-size="16" font-weight="650">dead instruction-emulation code removal</text><text class="mono" x="756" y="88" fill="#78988f" font-size="16">MERGED</text>
+    <circle cx="42" cy="132" r="6" fill="#b8a2ff"/><text class="mono" x="62" y="136" fill="#b8a2ff" font-size="16">#3580</text><text class="sans" x="133" y="136" fill="#e8fff5" font-size="16" font-weight="650">type-conversion and return-value guideline fixes</text><text class="mono" x="756" y="136" fill="#78988f" font-size="16">MERGED</text>
+  </g>
+</svg>

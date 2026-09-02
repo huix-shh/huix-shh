@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="820" viewBox="0 0 720 820" role="img" aria-labelledby="title desc">
+  <title id="title">Vibe Coding, with a gate</title>
+  <desc id="desc">Mobile workflow: Claude Code, Codex, and Kimi are followed by human code review and verification with automated tests, logs, and benchmarks.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071012"/><stop offset=".58" stop-color="#0a1819"/><stop offset="1" stop-color="#17132a"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a8ffda" stroke-opacity=".05"/></pattern>
+    <style>.sans{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:"SFMono-Regular",Consolas,monospace}</style>
+  </defs>
+  <rect width="720" height="820" rx="28" fill="url(#bg)"/><rect width="720" height="820" rx="28" fill="url(#grid)"/>
+  <rect x="1" y="1" width="718" height="818" rx="27" fill="none" stroke="#79f2c0" stroke-opacity=".24"/>
+  <text class="mono" x="36" y="53" fill="#ffc978" font-size="22" font-weight="700" letter-spacing="2">VIBE CODING, WITH A GATE</text>
+
+  <g transform="translate(36 88)">
+    <rect width="648" height="176" rx="22" fill="#102a26" stroke="#79f2c0" stroke-opacity=".52"/>
+    <circle cx="40" cy="40" r="18" fill="#79f2c0"/><path d="m32 40 5 5 10-12" fill="none" stroke="#071012" stroke-width="4"/>
+    <text class="sans" x="32" y="108" fill="#e8fff5" font-size="29" font-weight="750">Claude Code / Codex / Kimi</text>
+  </g>
+  <path d="M360 264V306" stroke="#ffc978" stroke-width="4"/><path d="m348 294 12 13 12-13" fill="none" stroke="#ffc978" stroke-width="4"/>
+
+  <g transform="translate(36 307)">
+    <rect width="648" height="176" rx="22" fill="#231e24" stroke="#ffc978" stroke-opacity=".62"/>
+    <circle cx="40" cy="40" r="18" fill="#ffc978"/><path d="M30 40h20M40 30v20" stroke="#151008" stroke-width="4"/>
+    <text class="sans" x="32" y="103" fill="#fff7e8" font-size="29" font-weight="750">Human review:</text>
+    <text class="mono" x="32" y="139" fill="#ffd997" font-size="22">code review</text>
+  </g>
+  <path d="M360 483V525" stroke="#ffc978" stroke-width="4"/><path d="m348 513 12 13 12-13" fill="none" stroke="#ffc978" stroke-width="4"/>
+
+  <g transform="translate(36 526)">
+    <rect width="648" height="232" rx="22" fill="#241b3d" stroke="#b8a2ff" stroke-opacity=".52"/>
+    <circle cx="40" cy="40" r="18" fill="#b8a2ff"/><path d="m32 40 5 5 10-12" fill="none" stroke="#100c1c" stroke-width="4"/>
+    <text class="sans" x="32" y="101" fill="#f0edff" font-size="29" font-weight="750">Verification:</text>
+    <text class="mono" x="32" y="142" fill="#d0c4ff" font-size="22">automated tests · logs</text>
+    <text class="mono" x="32" y="177" fill="#d0c4ff" font-size="22">· benchmarks</text>
+  </g>
+</svg>

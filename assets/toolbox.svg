@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Systems engineering toolbox</title>
+  <desc id="desc">Languages, Linux systems, virtualization, and cloud-native tools: C, Python, Go, Bash, Linux, KVM, QEMU, libvirt, Firecracker, cloud-init, systemd, Kubernetes, containerd, runc, and Ansible.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071012"/><stop offset=".58" stop-color="#0a1819"/><stop offset="1" stop-color="#11142a"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a8ffda" stroke-opacity=".045"/></pattern>
+    <style>.sans{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:"SFMono-Regular",Consolas,monospace}</style>
+  </defs>
+  <rect width="1200" height="360" rx="26" fill="url(#bg)"/><rect width="1200" height="360" rx="26" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="358" rx="25" fill="none" stroke="#79f2c0" stroke-opacity=".22"/>
+  <g transform="translate(52 49)">
+    <text class="mono" x="0" y="0" fill="#79f2c0" font-size="16" letter-spacing="2">TOOLBOX / WORKING SET</text>
+    <text class="sans" x="0" y="43" fill="#e8fff5" font-size="29" font-weight="750">Code, systems, virtualization, and cloud-native tools.</text>
+  </g>
+  <g transform="translate(52 137)">
+    <rect width="1096" height="66" rx="18" fill="#102a26" stroke="#79f2c0" stroke-opacity=".34"/>
+    <text class="mono" x="25" y="27" fill="#79f2c0" font-size="16" letter-spacing="1.6">CODE</text>
+    <text class="sans" x="25" y="51" fill="#e8fff5" font-size="19" font-weight="700">C</text>
+    <text class="sans" x="134" y="51" fill="#e8fff5" font-size="19" font-weight="700">Python</text>
+    <text class="sans" x="292" y="51" fill="#e8fff5" font-size="19" font-weight="700">Go</text>
+    <text class="sans" x="402" y="51" fill="#e8fff5" font-size="19" font-weight="700">Bash</text>
+    <path d="M104 19V49M262 19V49M372 19V49" stroke="#79f2c0" stroke-opacity=".2"/>
+    <text class="mono" x="1068" y="40" fill="#78988f" font-size="16" text-anchor="end">AUTOMATE / INTEGRATE</text>
+  </g>
+  <g transform="translate(52 217)">
+    <rect width="680" height="91" rx="18" fill="#10262d" stroke="#69d7e8" stroke-opacity=".34"/>
+    <text class="mono" x="25" y="27" fill="#69d7e8" font-size="16" letter-spacing="1.6">SYSTEMS + VIRTUALIZATION</text>
+    <text class="sans" x="25" y="60" fill="#e8fff5" font-size="16" font-weight="650">Linux · KVM · QEMU · libvirt · Firecracker</text>
+    <text class="mono" x="25" y="79" fill="#8faeb5" font-size="16">cloud-init · systemd</text>
+  </g>
+  <g transform="translate(746 217)">
+    <rect width="402" height="91" rx="18" fill="#241b3d" stroke="#b8a2ff" stroke-opacity=".34"/>
+    <text class="mono" x="25" y="27" fill="#b8a2ff" font-size="16" letter-spacing="1.6">CLOUD NATIVE</text>
+    <text class="sans" x="25" y="60" fill="#f0edff" font-size="16" font-weight="650">Kubernetes · containerd · runc</text>
+    <text class="mono" x="25" y="79" fill="#aaa2c2" font-size="16">Ansible</text>
+  </g>
+</svg>

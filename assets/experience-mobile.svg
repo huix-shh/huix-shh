@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="1130" viewBox="0 0 720 1130" role="img" aria-labelledby="title desc">
+  <title id="title">Selected experience</title>
+  <desc id="desc">Mobile layout of selected work at Hygon, Iluvatar CoreX, Intel, Baidu, and Shannon Systems.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#071012"/><stop offset=".56" stop-color="#0a1819"/><stop offset="1" stop-color="#11142a"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a8ffda" stroke-opacity=".045"/></pattern>
+    <style>.sans{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:"SFMono-Regular",Consolas,monospace}.card{fill:#0d1b1d;stroke:#a8ffda;stroke-opacity:.18}.muted{fill:#9bb6ad}</style>
+  </defs>
+  <rect width="720" height="1130" rx="28" fill="url(#bg)"/><rect width="720" height="1130" rx="28" fill="url(#grid)"/>
+  <rect x="1" y="1" width="718" height="1128" rx="27" fill="none" stroke="#79f2c0" stroke-opacity=".24"/>
+  <text class="mono" x="36" y="51" fill="#79f2c0" font-size="22" letter-spacing="2">SELECTED EXPERIENCE</text>
+  <text class="sans" x="36" y="91" fill="#e8fff5" font-size="30" font-weight="750">Selected systems work</text>
+
+  <g transform="translate(36 124)">
+    <rect class="card" width="648" height="180" rx="20" stroke="#79f2c0" stroke-opacity=".42"/>
+    <rect width="8" height="180" rx="4" fill="#79f2c0"/>
+    <text class="sans" x="30" y="44" fill="#e8fff5" font-size="28" font-weight="750">Hygon</text>
+    <text class="mono" x="30" y="72" fill="#79f2c0" font-size="22">LINUX SYSTEMS · VIRTUALIZATION</text>
+    <text class="sans muted" x="30" y="108" font-size="22">VM test-environment flow</text>
+    <text class="mono" x="30" y="136" fill="#9bb6ad" font-size="22">cloud-init · libvirt · boot checks · Ansible</text>
+    <text class="sans muted" x="30" y="164" font-size="22">Customer diagnosis · CubeSandbox · network tuning</text>
+  </g>
+
+  <g transform="translate(36 324)">
+    <rect class="card" width="648" height="160" rx="20" stroke="#b8a2ff" stroke-opacity=".3"/>
+    <text class="sans" x="30" y="43" fill="#e8fff5" font-size="27" font-weight="750">Iluvatar CoreX</text>
+    <text class="mono" x="30" y="71" fill="#b8a2ff" font-size="22">GPU · AI INFRASTRUCTURE</text>
+    <text class="sans muted" x="30" y="108" font-size="22">Device Plugin · Container Toolkit</text>
+    <text class="sans muted" x="30" y="138" font-size="22">Dify/RAG compiler-log diagnosis</text>
+  </g>
+
+  <g transform="translate(36 504)">
+    <rect class="card" width="648" height="160" rx="20" stroke="#69d7e8" stroke-opacity=".3"/>
+    <text class="sans" x="30" y="43" fill="#e8fff5" font-size="27" font-weight="750">Intel</text>
+    <text class="mono" x="30" y="71" fill="#69d7e8" font-size="22">VIRTUALIZATION · EDGE</text>
+    <text class="sans muted" x="30" y="108" font-size="22">ACRN validation · upstream changes</text>
+    <text class="sans muted" x="30" y="138" font-size="22">provider integration · edge simulation</text>
+  </g>
+
+  <g transform="translate(36 684)">
+    <rect class="card" width="648" height="160" rx="20" stroke="#69d7e8" stroke-opacity=".3"/>
+    <text class="sans" x="30" y="43" fill="#e8fff5" font-size="27" font-weight="750">Baidu</text>
+    <text class="mono" x="30" y="71" fill="#69d7e8" font-size="22">VIRTUALIZATION · I/O</text>
+    <text class="sans muted" x="30" y="108" font-size="22">libvirt/QEMU · hot-migration diagnosis</text>
+    <text class="sans muted" x="30" y="138" font-size="22">VF controls for virtualized SSD I/O</text>
+  </g>
+
+  <g transform="translate(36 864)">
+    <rect class="card" width="648" height="160" rx="20" stroke="#79f2c0" stroke-opacity=".3"/>
+    <text class="sans" x="30" y="43" fill="#e8fff5" font-size="27" font-weight="750">Shannon Systems</text>
+    <text class="mono" x="30" y="71" fill="#79f2c0" font-size="22">STORAGE SYSTEMS</text>
+    <text class="sans muted" x="30" y="108" font-size="22">SSD FTL · address translation · metadata</text>
+    <text class="sans muted" x="30" y="138" font-size="22">distributed-storage feasibility validation</text>
+  </g>
+  <text class="mono" x="684" y="1084" fill="#78988f" font-size="22" text-anchor="end">SELECTED WORK · TEXT DETAILS BELOW</text>
+</svg>

@@ -41,10 +41,123 @@ CRITICAL_DOM_SELECTORS = (
     "#public-title",
 )
 APPROVED_README_VIBE_TEXT = (
-    "## Vibe Coding, with a gate ~~~text Claude Code / Codex / Kimi ↓ "
-    "Human review: code review ↓ Verification: automated tests · logs · benchmarks ~~~ "
+    "Claude Code / Codex / Kimi ↓ Human review: code review ↓ "
+    "Verification: automated tests · logs · benchmarks "
     "I use Claude Code, Codex, and Kimi as coding tools. Generated changes go through "
     "human review and verification with automated tests, logs, and benchmarks."
+)
+APPROVED_WORKFLOW_SVG_TEXT = (
+    "VIBE CODING, WITH A GATE Claude Code / Codex / Kimi "
+    "Human review: code review Verification: automated tests · logs · benchmarks"
+)
+APPROVED_EXPERIENCE_FALLBACK_TEXT = (
+    "- **Hygon** — Contributed to a repeatable VM test-environment flow around image "
+    "preparation, cloud-init, libvirt, boot checks, and Ansible; also handled customer "
+    "issue diagnosis. Additional validation: comparable CubeSandbox runs and "
+    "passthrough-network tuning; one single-port, one-way test result reached 130+ Gbps. "
+    "- **Iluvatar CoreX** — Developed GPU Device Plugin and Container Toolkit components; "
+    "built a Dify/RAG workflow for compiler-log retrieval and assisted diagnosis. "
+    "- **Intel** — Contributed to ACRN validation, code quality, and upstream changes; "
+    "implemented infrastructure-provider integrations and Kubernetes-managed edge "
+    "simulations. - **Baidu** — Maintained a libvirt/QEMU platform, diagnosed hot-migration "
+    "failures, and improved VF permission controls for virtualized SSD I/O paths. "
+    "- **Shannon Systems** — Implemented SSD FTL address translation and metadata handling; "
+    "participated in distributed-storage feasibility validation involving ZooKeeper, "
+    "consistent hashing, and RDMA."
+)
+APPROVED_TOOLBOX_FALLBACK_TEXT = (
+    "- **code:** C · Python · Go · Bash - **systems:** Linux · KVM · QEMU · libvirt · "
+    "Firecracker · cloud-init · systemd - **cloud_native:** Kubernetes · containerd · runc · "
+    "Ansible"
+)
+APPROVED_PUBLIC_WORK_README_TEXT = (
+    "Inspect representative changes: - [#3342 — Clean up vCPU code for static "
+    "analysis](https://github.com/projectacrn/acrn-hypervisor/pull/3342) - [#3373 — Remove "
+    "dead instruction-emulation code](https://github.com/projectacrn/acrn-hypervisor/pull/3373) "
+    "- [#3580 — Fix type-conversion and return-value coding-guideline "
+    "violations](https://github.com/projectacrn/acrn-hypervisor/pull/3580) New public "
+    "contributions will be added here only after the corresponding PR or commit is inspectable."
+)
+APPROVED_SVG_VISIBLE_TEXT = {
+    "hero.svg": (
+        "SYSTEMS ENGINEER SYSTEMS WORK, MADE VISIBLE. HUIX-SHH / BUILD · REVIEW · VERIFY "
+        "LINUX VIRTUALIZATION CLOUD NATIVE SYSTEM CUTAWAY L3 Cloud Native Kubernetes · "
+        "runtimes · edge L2 Virtualization KVM · QEMU · libvirt · ACRN L1 Linux Systems "
+        "code · automation · I/O CPU / GPU / STORAGE / NETWORK VIBE CODING BUILD REVIEW "
+        "VERIFY HUMAN GATE"
+    ),
+    "hero-mobile.svg": (
+        "SYSTEMS ENGINEER SYSTEMS WORK, MADE VISIBLE. LINUX VIRTUALIZATION CLOUD NATIVE "
+        "SYSTEM CUTAWAY L3 Cloud Native Kubernetes · runtimes · edge L2 Virtualization "
+        "KVM · QEMU · libvirt · ACRN L1 Linux Systems code · automation · I/O VIBE CODING "
+        "BUILD · REVIEW · VERIFY"
+    ),
+    "experience.svg": (
+        "SELECTED EXPERIENCE Systems, virtualization, cloud native, and storage. HYG Hygon "
+        "LINUX SYSTEMS · VIRTUALIZATION VM test-environment flow · cloud-init · libvirt · "
+        "boot checks · Ansible Customer issue diagnosis · CubeSandbox validation · "
+        "passthrough-network tuning IX Iluvatar CoreX GPU · AI INFRASTRUCTURE Device Plugin · "
+        "Container Toolkit Dify/RAG compiler-log diagnosis IN Intel VIRTUALIZATION · EDGE "
+        "ACRN validation · upstream changes provider integration · edge simulation BD Baidu "
+        "VIRTUALIZATION · I/O libvirt/QEMU · hot-migration diagnosis VF controls for "
+        "virtualized SSD I/O SS Shannon Systems STORAGE SYSTEMS SSD FTL · address translation · "
+        "metadata distributed-storage feasibility validation SELECTED WORK · NOT A COMPLETE "
+        "EMPLOYMENT TIMELINE"
+    ),
+    "experience-mobile.svg": (
+        "SELECTED EXPERIENCE Selected systems work Hygon LINUX SYSTEMS · VIRTUALIZATION "
+        "VM test-environment flow cloud-init · libvirt · boot checks · Ansible Customer "
+        "diagnosis · CubeSandbox · network tuning Iluvatar CoreX GPU · AI INFRASTRUCTURE "
+        "Device Plugin · Container Toolkit Dify/RAG compiler-log diagnosis Intel "
+        "VIRTUALIZATION · EDGE ACRN validation · upstream changes provider integration · "
+        "edge simulation Baidu VIRTUALIZATION · I/O libvirt/QEMU · hot-migration diagnosis "
+        "VF controls for virtualized SSD I/O Shannon Systems STORAGE SYSTEMS SSD FTL · address "
+        "translation · metadata distributed-storage feasibility validation SELECTED WORK · "
+        "TEXT DETAILS BELOW"
+    ),
+    "workflow.svg": APPROVED_WORKFLOW_SVG_TEXT,
+    "workflow-mobile.svg": APPROVED_WORKFLOW_SVG_TEXT,
+    "public-work.svg": (
+        "PUBLIC EVIDENCE / ACRN HYPERVISOR ACRN Hypervisor · 8 merged pull requests Public "
+        "upstream changes focused on code quality and maintainability. 8 MERGED pull requests "
+        "PUBLIC · REVIEWED · TRACEABLE #3342 vCPU cleanup for static analysis MERGED #3373 "
+        "dead instruction-emulation code removal MERGED #3580 type-conversion and return-value "
+        "guideline fixes MERGED"
+    ),
+    "public-work-mobile.svg": (
+        "PUBLIC EVIDENCE / ACRN HYPERVISOR 8 merged pull requests Code quality and "
+        "maintainability 8 MERGED pull requests #3342 vCPU cleanup for static analysis #3373 "
+        "dead instruction-emulation code removal #3580 coding-guideline fixes"
+    ),
+    "toolbox.svg": (
+        "TOOLBOX / WORKING SET Code, systems, virtualization, and cloud-native tools. CODE C "
+        "Python Go Bash AUTOMATE / INTEGRATE SYSTEMS + VIRTUALIZATION Linux · KVM · QEMU · "
+        "libvirt · Firecracker cloud-init · systemd CLOUD NATIVE Kubernetes · containerd · "
+        "runc Ansible"
+    ),
+    "toolbox-mobile.svg": (
+        "TOOLBOX / WORKING SET Tools used across the stack CODE C · Python · Go · Bash "
+        "SYSTEMS + VIRTUALIZATION Linux · KVM · QEMU · libvirt Firecracker cloud-init · "
+        "systemd CLOUD NATIVE Kubernetes · containerd · runc Ansible"
+    ),
+}
+PROFILE_PICTURES = {
+    "hero.svg": "hero-mobile.svg",
+    "experience.svg": "experience-mobile.svg",
+    "workflow.svg": "workflow-mobile.svg",
+    "public-work.svg": "public-work-mobile.svg",
+    "toolbox.svg": "toolbox-mobile.svg",
+}
+FORBIDDEN_VISUAL_CLAIMS = (
+    "Explore · draft · refactor",
+    "edge cases · maintainability",
+    "NO BLIND MERGE",
+    "Produce evidence",
+    "Run · observe · explain",
+    "ENGINEERING JUDGMENT OWNS THE RESULT",
+    "repeatable, observable, and easier to diagnose",
+    "Broad enough to follow the system end to end",
+    "LEARN AS NEEDED · VERIFY IN CONTEXT",
 )
 APPROVED_PAGES_VIBE_RAIL_TEXT = (
     "01 Build Claude Code · Codex · Kimi 02 Human Review code review "
@@ -61,6 +174,34 @@ APPROVED_PAGES_VIBE_METHOD_TEXT = (
 
 def normalize_text(text: str) -> str:
     return re.sub(r"\s+", " ", text).strip()
+
+
+def svg_visible_text(root: ET.Element) -> str:
+    return normalize_text(
+        " ".join(
+            "".join(node.itertext())
+            for node in root.iter()
+            if node.tag.rsplit("}", 1)[-1] == "text"
+        )
+    )
+
+
+def svg_text_sizes(root: ET.Element) -> list[float]:
+    sizes: list[float] = []
+
+    def visit(node: ET.Element, inherited: float | None = None) -> None:
+        current = inherited
+        if "font-size" in node.attrib:
+            current = float(node.attrib["font-size"])
+        if node.tag.rsplit("}", 1)[-1] == "text":
+            if current is None:
+                raise AssertionError("SVG text is missing an explicit or inherited font-size")
+            sizes.append(current)
+        for child in node:
+            visit(child, current)
+
+    visit(root)
+    return sizes
 
 
 def extract_html_text(source: str, pattern: str, label: str) -> str:
@@ -89,13 +230,17 @@ def validate_repository_contract() -> None:
     ):
         failures.append("README regressed to a performance identity")
 
-    hygon_row = re.search(r"^\|\s*\*\*Hygon\*\*\s*\|(?P<work>.*)\|\s*$", readme, re.MULTILINE)
+    hygon_item = re.search(
+        r"^- \*\*Hygon\*\*.*?(?=^- \*\*Iluvatar CoreX\*\*)",
+        readme,
+        re.MULTILINE | re.DOTALL,
+    )
     if readme.count("130+ Gbps") != 1:
         failures.append("README must contain the secondary 130+ Gbps fact exactly once")
-    elif not hygon_row:
-        failures.append("README must keep the secondary 130+ Gbps fact inside the Hygon table cell")
+    elif not hygon_item:
+        failures.append("README must keep the secondary 130+ Gbps fact inside the Hygon text fallback")
     else:
-        hygon_work = hygon_row.group("work")
+        hygon_work = hygon_item.group(0)
         secondary_fragments = re.findall(r"<sub>(.*?)</sub>", hygon_work, re.IGNORECASE | re.DOTALL)
         if len(secondary_fragments) != 1 or "130+ Gbps" not in secondary_fragments[0]:
             failures.append("README must keep 130+ Gbps inside the single Hygon <sub> fact")
@@ -106,21 +251,149 @@ def validate_repository_contract() -> None:
     readme_vibe = re.search(
         r"^## Vibe Coding, with a gate\n.*?(?=^## Public work)", readme, re.MULTILINE | re.DOTALL
     )
-    if not readme_vibe or normalize_text(readme_vibe.group(0)) != APPROVED_README_VIBE_TEXT:
+    vibe_fallback = (
+        re.search(
+            r"<details>\s*<summary>Text version</summary>(?P<body>.*?)</details>",
+            readme_vibe.group(0),
+            re.DOTALL,
+        )
+        if readme_vibe
+        else None
+    )
+    fallback_text = (
+        normalize_text(re.sub(r"<[^>]+>", " ", vibe_fallback.group("body")))
+        if vibe_fallback
+        else ""
+    )
+    if fallback_text != APPROVED_README_VIBE_TEXT:
         failures.append("README Vibe Coding section differs from the human-approved content contract")
+
+    experience_section = re.search(
+        r"^## Selected experience\n(?P<body>.*?)(?=^## Vibe Coding, with a gate)",
+        readme,
+        re.MULTILINE | re.DOTALL,
+    )
+    experience_fallback = (
+        re.search(
+            r"<details>\s*<summary>Text version and details</summary>(?P<body>.*?)</details>",
+            experience_section.group("body"),
+            re.DOTALL,
+        )
+        if experience_section
+        else None
+    )
+    experience_fallback_text = (
+        normalize_text(re.sub(r"<[^>]+>", " ", experience_fallback.group("body")))
+        if experience_fallback
+        else ""
+    )
+    if experience_fallback_text != APPROVED_EXPERIENCE_FALLBACK_TEXT:
+        failures.append("README experience fallback differs from its approved exact contract")
+
+    toolbox_section = re.search(
+        r"^## Toolbox\n(?P<body>.*?)(?=^## Connect)",
+        readme,
+        re.MULTILINE | re.DOTALL,
+    )
+    toolbox_fallback = (
+        re.search(
+            r"<details>\s*<summary>Text version</summary>(?P<body>.*?)</details>",
+            toolbox_section.group("body"),
+            re.DOTALL,
+        )
+        if toolbox_section
+        else None
+    )
+    toolbox_fallback_text = (
+        normalize_text(re.sub(r"<[^>]+>", " ", toolbox_fallback.group("body")))
+        if toolbox_fallback
+        else ""
+    )
+    if toolbox_fallback_text != APPROVED_TOOLBOX_FALLBACK_TEXT:
+        failures.append("README toolbox fallback differs from its approved exact contract")
+
+    public_work_section = re.search(
+        r"^## Public work\n(?P<body>.*?)(?=^## Toolbox)",
+        readme,
+        re.MULTILINE | re.DOTALL,
+    )
+    public_work_text = (
+        normalize_text(
+            re.sub(
+                r"<picture>.*?</picture>",
+                " ",
+                public_work_section.group("body"),
+                flags=re.DOTALL,
+            )
+        )
+        if public_work_section
+        else ""
+    )
+    if public_work_text != APPROVED_PUBLIC_WORK_README_TEXT:
+        failures.append("README public-work text differs from its approved exact contract")
+
+    if readme.count("<details>") != 3 or "<details open" in readme:
+        failures.append("README must keep exactly three collapsed text fallback controls")
+
     if "https://huix-shh.github.io/huix-shh/" not in readme:
         failures.append("README is missing the interactive Pages entry")
     if not ROOT.joinpath("index.html").is_file():
         failures.append("GitHub Pages entry is missing")
 
-    try:
-        hero = ET.parse(REPOSITORY / "assets" / "hero.svg")
-        hero_text = " ".join(hero.getroot().itertext())
-        for label in ("Linux Systems", "Virtualization", "Cloud Native", "VIBE CODING"):
-            if label not in hero_text:
-                failures.append(f"Hero SVG is missing {label}")
-    except (ET.ParseError, OSError) as error:
-        failures.append(f"Hero SVG is invalid: {error}")
+    if readme.count("<picture>") != len(PROFILE_PICTURES):
+        failures.append("README must use one responsive picture for each visual section")
+
+    parsed_svgs: dict[str, ET.Element] = {}
+    for desktop_name, mobile_name in PROFILE_PICTURES.items():
+        desktop_reference = f'src="./assets/{desktop_name}"'
+        mobile_reference = (
+            f'<source media="(max-width: 640px)" srcset="./assets/{mobile_name}" />'
+        )
+        if readme.count(desktop_reference) != 1 or readme.count(mobile_reference) != 1:
+            failures.append(
+                f"README responsive picture contract is missing {desktop_name}/{mobile_name}"
+            )
+
+        for asset_name in (desktop_name, mobile_name):
+            try:
+                root = ET.parse(REPOSITORY / "assets" / asset_name).getroot()
+                parsed_svgs[asset_name] = root
+            except (ET.ParseError, OSError) as error:
+                failures.append(f"{asset_name} is invalid: {error}")
+
+        mobile_root = parsed_svgs.get(mobile_name)
+        if mobile_root is not None:
+            view_box = mobile_root.attrib.get("viewBox", "").split()
+            if len(view_box) != 4 or view_box[:3] != ["0", "0", "720"]:
+                failures.append(f"{mobile_name} must use a 720px-wide mobile viewBox")
+            try:
+                sizes = svg_text_sizes(mobile_root)
+                if not sizes or min(sizes) < 22:
+                    failures.append(f"{mobile_name} contains text smaller than 22 SVG pixels")
+            except (AssertionError, ValueError) as error:
+                failures.append(f"{mobile_name} font-size contract failed: {error}")
+
+    for asset_name, approved_text in APPROVED_SVG_VISIBLE_TEXT.items():
+        root = parsed_svgs.get(asset_name)
+        if root is not None and svg_visible_text(root) != approved_text:
+            failures.append(f"{asset_name} differs from its approved exact visible-text contract")
+
+    for desktop_name in PROFILE_PICTURES:
+        desktop_root = parsed_svgs.get(desktop_name)
+        if desktop_root is None:
+            continue
+        try:
+            sizes = svg_text_sizes(desktop_root)
+            if not sizes or min(sizes) < 16:
+                failures.append(f"{desktop_name} contains text smaller than 16 SVG pixels")
+        except (AssertionError, ValueError) as error:
+            failures.append(f"{desktop_name} font-size contract failed: {error}")
+
+    for asset_name, root in parsed_svgs.items():
+        visible = svg_visible_text(root)
+        for forbidden in FORBIDDEN_VISUAL_CLAIMS:
+            if forbidden.lower() in visible.lower():
+                failures.append(f"{asset_name} contains unsupported visual claim: {forbidden}")
 
     if failures:
         raise AssertionError("; ".join(failures))
