@@ -27,6 +27,19 @@ REPOSITORY = Path(__file__).resolve().parents[1]
 ROOT = REPOSITORY / "docs"
 DEFAULT_TARGET = ROOT.joinpath("index.html").as_uri()
 ARTIFACTS = REPOSITORY / "artifacts"
+CDP_COMMAND_TIMEOUT_SECONDS = 20.0
+CHROME_STARTUP_TIMEOUT_SECONDS = 20.0
+PAGE_CREATION_TIMEOUT_SECONDS = 20.0
+NAVIGATION_TIMEOUT_SECONDS = 30.0
+DOM_READY_TIMEOUT_SECONDS = 15.0
+POLL_INTERVAL_SECONDS = 0.1
+CRITICAL_DOM_SELECTORS = (
+    "#hero-title",
+    "#system-title",
+    "#experience-title",
+    "#method-title",
+    "#public-title",
+)
 APPROVED_README_VIBE_TEXT = (
     "## Vibe Coding, with a gate ~~~text Claude Code / Codex / Kimi ↓ "
     "Human review: code review ↓ Verification: automated tests · logs · benchmarks ~~~ "
@@ -159,21 +172,80 @@ def free_port() -> int:
 
 class CDP:
     def __init__(self, websocket_url: str) -> None:
-        self.connection = websocket.create_connection(websocket_url, timeout=8, origin="http://localhost")
+        self.connection = websocket.create_connection(
+            websocket_url,
+            timeout=CDP_COMMAND_TIMEOUT_SECONDS,
+            origin="http://localhost",
+        )
         self.sequence = 0
+        self.events: list[dict] = []
+
+    def _receive(self, *, timeout: float, timeout_message: str) -> dict:
+        self.connection.settimeout(timeout)
+        try:
+            return json.loads(self.connection.recv())
+        except websocket.WebSocketTimeoutException as error:
+            raise RuntimeError(timeout_message) from error
+        finally:
+            self.connection.settimeout(CDP_COMMAND_TIMEOUT_SECONDS)
 
     def call(self, method: str, params: dict | None = None) -> dict:
         self.sequence += 1
         message_id = self.sequence
+        deadline = time.monotonic() + CDP_COMMAND_TIMEOUT_SECONDS
         self.connection.send(json.dumps({"id": message_id, "method": method, "params": params or {}}))
 
         while True:
-            response = json.loads(self.connection.recv())
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise RuntimeError(
+                    f"CDP command timeout after {CDP_COMMAND_TIMEOUT_SECONDS:.0f}s "
+                    f"while waiting for {method}"
+                )
+            response = self._receive(
+                timeout=remaining,
+                timeout_message=(
+                    f"CDP command timeout after {CDP_COMMAND_TIMEOUT_SECONDS:.0f}s "
+                    f"while waiting for {method}"
+                ),
+            )
             if response.get("id") != message_id:
+                if response.get("method"):
+                    self.events.append(response)
                 continue
             if "error" in response:
                 raise RuntimeError(f"{method}: {response['error']}")
             return response.get("result", {})
+
+    def discard_events(self, method: str) -> None:
+        self.events = [event for event in self.events if event.get("method") != method]
+
+    def wait_for_event(
+        self,
+        method: str,
+        predicate,
+        *,
+        timeout: float,
+        phase: str,
+    ) -> dict:
+        deadline = time.monotonic() + timeout
+        while True:
+            for index, event in enumerate(self.events):
+                if event.get("method") == method and predicate(event):
+                    return self.events.pop(index)
+
+            remaining = deadline - time.monotonic()
+            if remaining <= 0:
+                raise RuntimeError(f"{phase} timeout after {timeout:.0f}s")
+
+            event = self._receive(
+                timeout=remaining,
+                timeout_message=(
+                    f"{phase} timeout after {timeout:.0f}s while waiting for {method}"
+                ),
+            )
+            if event.get("method"):
+                self.events.append(event)
 
     def close(self) -> None:
         self.connection.close()
@@ -181,23 +253,52 @@ class CDP:
 
 def wait_for_debugger(port: int) -> None:
     endpoint = f"http://127.0.0.1:{port}/json/version"
-    for _ in range(80):
+    deadline = time.monotonic() + CHROME_STARTUP_TIMEOUT_SECONDS
+    last_error: OSError | None = None
+    while time.monotonic() < deadline:
         try:
             with urlopen(endpoint, timeout=0.4):
                 return
-        except OSError:
-            time.sleep(0.1)
-    raise RuntimeError("Chrome DevTools endpoint did not start")
+        except OSError as error:
+            last_error = error
+            time.sleep(POLL_INTERVAL_SECONDS)
+    raise RuntimeError(
+        f"Chrome startup timeout after {CHROME_STARTUP_TIMEOUT_SECONDS:.0f}s: "
+        f"DevTools endpoint {endpoint} was unavailable; last_error={last_error!r}"
+    )
 
 
 def new_page(port: int) -> CDP:
-    request = Request(
-        f"http://127.0.0.1:{port}/json/new?{quote('about:blank', safe=':/')}",
-        method="PUT",
-    )
-    with urlopen(request, timeout=3) as response:
-        page = json.load(response)
-    return CDP(page["webSocketDebuggerUrl"])
+    endpoint = f"http://127.0.0.1:{port}/json/new?{quote('about:blank', safe=':/')}"
+    request = Request(endpoint, method="PUT")
+    try:
+        with urlopen(request, timeout=PAGE_CREATION_TIMEOUT_SECONDS) as response:
+            page = json.load(response)
+    except OSError as error:
+        reason = getattr(error, "reason", None)
+        if isinstance(error, TimeoutError) or isinstance(reason, TimeoutError):
+            raise RuntimeError(
+                f"Chrome page creation timeout after {PAGE_CREATION_TIMEOUT_SECONDS:.0f}s "
+                f"for {endpoint}"
+            ) from error
+        raise RuntimeError(
+            f"Chrome page creation request failed for {endpoint}: {error!r}"
+        ) from error
+    except json.JSONDecodeError as error:
+        raise RuntimeError(
+            f"Chrome page creation returned invalid JSON from {endpoint}: {error}"
+        ) from error
+
+    if not isinstance(page, dict):
+        raise RuntimeError(
+            f"Chrome page creation response from {endpoint} must be a JSON object"
+        )
+    websocket_url = page.get("webSocketDebuggerUrl")
+    if not websocket_url:
+        raise RuntimeError(
+            f"Chrome page creation response from {endpoint} omitted webSocketDebuggerUrl"
+        )
+    return CDP(websocket_url)
 
 
 def evaluate(cdp: CDP, expression: str):
@@ -234,6 +335,7 @@ def navigate(
 ) -> None:
     cdp.call("Page.enable")
     cdp.call("Runtime.enable")
+    cdp.call("Page.setLifecycleEventsEnabled", {"enabled": True})
     cdp.call(
         "Emulation.setDeviceMetricsOverride",
         {
@@ -253,14 +355,60 @@ def navigate(
         },
     )
     cdp.call("Emulation.setScriptExecutionDisabled", {"value": not javascript})
-    cdp.call("Page.navigate", {"url": target})
+    cdp.discard_events("Page.lifecycleEvent")
+    navigation = cdp.call("Page.navigate", {"url": target})
+    if navigation.get("errorText"):
+        raise RuntimeError(f"Navigation failed for {target}: {navigation['errorText']}")
 
-    for _ in range(80):
-        state = evaluate(cdp, "document.readyState")
-        if state == "complete":
+    frame_id = navigation.get("frameId")
+    loader_id = navigation.get("loaderId")
+
+    def is_target_load(event: dict) -> bool:
+        params = event.get("params", {})
+        return (
+            params.get("name") == "load"
+            and (not frame_id or params.get("frameId") == frame_id)
+            and (not loader_id or params.get("loaderId") == loader_id)
+        )
+
+    cdp.wait_for_event(
+        "Page.lifecycleEvent",
+        is_target_load,
+        timeout=NAVIGATION_TIMEOUT_SECONDS,
+        phase=f"Navigation load event for {target}",
+    )
+
+    expected_url = target.rstrip("/")
+    selectors = json.dumps(CRITICAL_DOM_SELECTORS)
+    deadline = time.monotonic() + DOM_READY_TIMEOUT_SECONDS
+    last_state = None
+    while time.monotonic() < deadline:
+        last_state = evaluate(
+            cdp,
+            f"""
+            (() => {{
+              const selectors = {selectors};
+              return {{
+                href: window.location.href,
+                readyState: document.readyState,
+                missing: selectors.filter((selector) => !document.querySelector(selector)),
+              }};
+            }})()
+            """,
+        )
+        if (
+            isinstance(last_state, dict)
+            and str(last_state.get("href", "")).rstrip("/") == expected_url
+            and last_state.get("readyState") == "complete"
+            and not last_state.get("missing")
+        ):
             return
-        time.sleep(0.05)
-    raise RuntimeError("Prototype did not finish loading")
+        time.sleep(POLL_INTERVAL_SECONDS)
+
+    raise RuntimeError(
+        f"DOM readiness timeout after {DOM_READY_TIMEOUT_SECONDS:.0f}s for {target}: "
+        f"last_state={last_state!r}"
+    )
 
 
 def collect(cdp: CDP) -> dict:
