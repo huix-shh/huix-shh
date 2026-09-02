@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Interactive profile for huix-shh: systems, virtualization, cloud native, and Vibe Coding."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <title>huix-shh · Systems Cutaway</title>
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="ambient" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="huix-shh home">
+        <span class="brand-mark" aria-hidden="true">H</span>
+        <span>huix-shh</span>
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <a href="#system-map">System map</a>
+        <a href="#selected-experience">Experience</a>
+        <a href="#public-work">Public work</a>
+      </nav>
+
+      <button class="theme-toggle js-only" type="button" aria-label="Switch color theme">
+        <span aria-hidden="true">◐</span>
+        <span class="theme-label">Theme</span>
+      </button>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot" aria-hidden="true"></span> SYSTEMS ENGINEER</p>
+          <h1 id="hero-title">Systems work,<br /><span>made visible.</span></h1>
+          <p class="hero-intro">
+            I work on Linux systems, virtualization, cloud-native infrastructure, and a practical
+            Vibe Coding workflow. The goal is straightforward: build things that can be reviewed,
+            tested, and explained.
+          </p>
+
+          <div class="identity-row" aria-label="Core capabilities">
+            <span>Systems</span>
+            <span>Virtualization</span>
+            <span>Cloud Native</span>
+            <span>Vibe Coding</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#system-map">Explore the system</a>
+            <a class="button button-ghost" href="#selected-experience">See selected work</a>
+          </div>
+        </div>
+
+        <div class="hero-cutaway" aria-hidden="true">
+          <div class="hero-diagram-label">SYSTEM CUTAWAY</div>
+          <div class="hero-stack">
+            <div class="hero-slab hero-slab-cloud">
+              <span>L3</span>
+              <strong>Cloud Native</strong>
+              <small>Kubernetes · runtimes</small>
+            </div>
+            <div class="hero-slab hero-slab-virtualization">
+              <span>L2</span>
+              <strong>Virtualization</strong>
+              <small>KVM · QEMU · libvirt</small>
+            </div>
+            <div class="hero-slab hero-slab-systems">
+              <span>L1</span>
+              <strong>Linux Systems</strong>
+              <small>code · automation · I/O</small>
+            </div>
+          </div>
+          <div class="hero-sidecar">
+            <span>VIBE CODING</span>
+            <ol>
+              <li><b>BUILD</b><i></i></li>
+              <li><b>REVIEW</b><i></i></li>
+              <li><b>VERIFY</b></li>
+            </ol>
+          </div>
+          <div class="hero-hardware">CPU / GPU / STORAGE / NETWORK</div>
+        </div>
+      </section>
+
+      <section class="section system-section" id="system-map" aria-labelledby="system-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / SYSTEM CUTAWAY</p>
+            <h2 id="system-title">A stack, not a skill wall.</h2>
+          </div>
+          <p>
+            The infrastructure layers stay literal. Vibe Coding runs beside them as an engineering
+            workflow—not as another layer in the stack.
+          </p>
+        </div>
+
+        <div class="cutaway-stage">
+          <div class="stack" aria-label="Infrastructure layers">
+            <a class="stack-layer layer-cloud" href="#selected-experience" data-filter="cloud">
+              <span class="layer-index">L3</span>
+              <span class="layer-copy">
+                <strong>Containers &amp; Cloud Native</strong>
+                <small>Kubernetes · containerd/runc · Device Plugin · edge control</small>
+              </span>
+              <span class="layer-action">trace ↗</span>
+            </a>
+
+            <a class="stack-layer layer-virtualization" href="#selected-experience" data-filter="virtualization">
+              <span class="layer-index">L2</span>
+              <span class="layer-copy">
+                <strong>Virtualization</strong>
+                <small>KVM · QEMU · libvirt · Firecracker · ACRN</small>
+              </span>
+              <span class="layer-action">trace ↗</span>
+            </a>
+
+            <a class="stack-layer layer-systems" href="#selected-experience" data-filter="systems">
+              <span class="layer-index">L1</span>
+              <span class="layer-copy">
+                <strong>Linux Systems</strong>
+                <small>C · Python · Go · Bash · systemd · automation</small>
+              </span>
+              <span class="layer-action">trace ↗</span>
+            </a>
+
+            <div class="hardware-line" aria-hidden="true">
+              <span>HARDWARE / CPU / GPU / STORAGE / NETWORK</span>
+            </div>
+          </div>
+
+          <a class="vibe-rail" href="#vibe-method" data-filter="vibe" aria-label="Trace the Vibe Coding workflow">
+            <div class="rail-title">
+              <span>VIBE CODING</span>
+              <small>engineering sidecar</small>
+            </div>
+
+            <ol class="rail-flow">
+              <li>
+                <span>01</span>
+                <strong>Build</strong>
+                <small>Claude Code · Codex · Kimi</small>
+              </li>
+              <li>
+                <span>02</span>
+                <strong>Human Review</strong>
+                <small>code review</small>
+              </li>
+              <li>
+                <span>03</span>
+                <strong>Verify</strong>
+                <small>tests · logs · benchmarks</small>
+              </li>
+            </ol>
+          </a>
+        </div>
+
+        <div class="trace-status js-only" aria-live="polite">
+          <span class="trace-light" aria-hidden="true"></span>
+          <span data-trace-message>Select a layer to trace it through the work below.</span>
+          <button type="button" data-clear-filter>Clear trace</button>
+        </div>
+      </section>
+
+      <section class="section experience-section" id="selected-experience" aria-labelledby="experience-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / SELECTED EXPERIENCE</p>
+            <h2 id="experience-title">What I have worked on.</h2>
+          </div>
+          <p>
+            Selected companies and work, not a complete employment timeline. Dates belong in the
+            formal résumé.
+          </p>
+        </div>
+
+        <div class="experience-grid">
+          <article class="experience-card card-wide" data-card data-domains="systems virtualization">
+            <header>
+              <span class="company-code">HYG</span>
+              <div>
+                <h3>Hygon</h3>
+                <p>Systems · Virtualization</p>
+              </div>
+            </header>
+            <ul>
+              <li>Contributed to the design and development of a repeatable VM test-environment flow around images, cloud-init, libvirt, boot checks, and Ansible.</li>
+            </ul>
+            <div class="performance-note">
+              <span>ADDITIONAL VALIDATION</span>
+              <p>Also participated in CubeSandbox runs across AMD EPYC and Hygon 7447V/7490, plus passthrough-network tuning where one single-port, one-way test result reached 130+ Gbps.</p>
+            </div>
+            <div class="tags"><span>Linux</span><span>libvirt</span><span>Ansible</span></div>
+          </article>
+
+          <article class="experience-card" data-card data-domains="cloud systems">
+            <header>
+              <span class="company-code">IX</span>
+              <div>
+                <h3>Iluvatar CoreX</h3>
+                <p>GPU · AI Infrastructure</p>
+              </div>
+            </header>
+            <ul>
+              <li>Developed GPU Device Plugin and Container Toolkit components.</li>
+              <li>Built a Dify/RAG workflow for compiler-log retrieval and assisted diagnosis.</li>
+            </ul>
+            <div class="tags"><span>Kubernetes</span><span>runc</span><span>GPU</span></div>
+          </article>
+
+          <article class="experience-card" data-card data-domains="virtualization cloud systems">
+            <header>
+              <span class="company-code">IN</span>
+              <div>
+                <h3>Intel</h3>
+                <p>Virtualization · Edge</p>
+              </div>
+            </header>
+            <ul>
+              <li>Contributed to ACRN validation, code quality, and public upstream changes.</li>
+              <li>Implemented infrastructure-provider integrations and developed Kubernetes-managed edge simulations.</li>
+            </ul>
+            <div class="tags"><span>ACRN</span><span>Kubernetes</span><span>MQTT</span></div>
+          </article>
+
+          <article class="experience-card" data-card data-domains="virtualization systems">
+            <header>
+              <span class="company-code">BD</span>
+              <div>
+                <h3>Baidu</h3>
+                <p>Virtualization · I/O</p>
+              </div>
+            </header>
+            <ul>
+              <li>Maintained a libvirt/QEMU platform and diagnosed hot-migration failures.</li>
+              <li>Improved VF permission controls for virtualized SSD I/O paths.</li>
+            </ul>
+            <div class="tags"><span>QEMU</span><span>libvirt</span><span>SR-IOV</span></div>
+          </article>
+
+          <article class="experience-card" data-card data-domains="systems">
+            <header>
+              <span class="company-code">SS</span>
+              <div>
+                <h3>Shannon Systems</h3>
+                <p>Storage Systems</p>
+              </div>
+            </header>
+            <ul>
+              <li>Implemented SSD FTL address translation and metadata handling.</li>
+              <li>Participated in feasibility validation for distributed-storage designs using Shannon SSD, ZooKeeper, consistent hashing, and RDMA.</li>
+            </ul>
+            <div class="tags"><span>SSD FTL</span><span>RDMA</span><span>Storage</span></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section method-section" id="vibe-method" aria-labelledby="method-title" data-card data-domains="vibe">
+        <div class="method-copy">
+          <p class="eyebrow">03 / VIBE CODING</p>
+          <h2 id="method-title">Fast iteration still needs a gate.</h2>
+          <p>
+            I use Claude Code, Codex, and Kimi as coding tools. Generated changes go through human
+            review and verification with automated tests, logs, and benchmarks.
+          </p>
+          <p class="method-note">
+            AI-assisted changes still pass through the same review and verification gate.
+          </p>
+        </div>
+
+        <div class="method-flow" aria-label="Vibe Coding verification workflow">
+          <div class="flow-node">
+            <span>BUILD</span>
+            <strong>AI Coding</strong>
+            <small>Claude Code · Codex · Kimi</small>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-node emphasis">
+            <span>REVIEW</span>
+            <strong>Human review</strong>
+            <small>code review</small>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-node">
+            <span>VERIFY</span>
+            <strong>Verification</strong>
+            <small>automated tests · logs · benchmarks</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section public-section" id="public-work" aria-labelledby="public-title">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">04 / PUBLIC WORK</p>
+            <h2 id="public-title">Evidence that already exists.</h2>
+          </div>
+          <p>Only public, inspectable work appears here. New contributions are added after they happen.</p>
+        </div>
+
+        <article class="public-card" data-card data-domains="virtualization systems">
+          <div class="public-number" aria-label="Eight merged pull requests">
+            <strong>8</strong>
+            <span>merged PRs</span>
+          </div>
+          <div class="public-copy">
+            <p class="eyebrow">ACRN HYPERVISOR</p>
+            <h3>Code quality and maintainability</h3>
+            <p>Public upstream changes focused on static-analysis cleanup, dead-code removal, and coding-guideline fixes.</p>
+            <div class="public-links">
+              <a href="https://github.com/projectacrn/acrn-hypervisor/pull/3342">PR #3342 ↗</a>
+              <a href="https://github.com/projectacrn/acrn-hypervisor/pull/3373">PR #3373 ↗</a>
+              <a href="https://github.com/projectacrn/acrn-hypervisor/pull/3580">PR #3580 ↗</a>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <span>huix-shh · Systems / Virtualization / Cloud Native / Vibe Coding</span>
+      <span>Interactive profile · GitHub Pages</span>
+    </footer>
+  </body>
+</html>
