@@ -1,98 +1,73 @@
 <div align="center">
 
-<img width="100%" src="./assets/hero.svg" alt="huix-shh — Systems, Virtualization, and AI Infrastructure" />
+<img width="100%" src="./assets/hero.svg" alt="huix-shh — Linux Systems, Virtualization, Cloud Native, and Vibe Coding" />
 
-<samp>Making complex systems repeatable, measurable, and fast.<br />Virtualization × Performance Engineering × AI Infrastructure.</samp>
+<samp>Linux systems · Virtualization · Cloud Native · Vibe Coding</samp>
 
-[![Job Intent](https://img.shields.io/badge/Job_Intent-Yangtze_River_Delta-0f172a?style=for-the-badge&logo=googlemaps&logoColor=38bdf8)](#-whoami)
-[![Experience](https://img.shields.io/badge/Systems-10%2B_Years-0f172a?style=for-the-badge&logo=linux&logoColor=22d3ee)](#experience-at-a-glance)
-[![Focus](https://img.shields.io/badge/Focus-Virtualization_%C3%97_Performance-0f172a?style=for-the-badge&logo=linuxcontainers&logoColor=a78bfa)](#engineering-snapshot)
+### [Explore the interactive system map →](https://huix-shh.github.io/huix-shh/)
 
 </div>
 
-## `$ whoami`
+## What I work on
 
-```yaml
-handle: huix-shh
-role: System Optimization Engineer
-preferred_region: Yangtze River Delta, China
-focus: [Virtualization, Systems Performance, Cloud Native, AI Infrastructure]
-languages: [C, Python, Go, Bash]
-principle: "Measure first. Automate what repeats. Keep claims reproducible."
-```
+~~~text
+┌──────────────────────────────────────────────┐   ┌──────────────────────┐
+│ L3  CLOUD NATIVE                            │   │ VIBE CODING          │
+│     Kubernetes · container runtimes · edge  │   │ Build                │
+├──────────────────────────────────────────────┤   │   ↓                  │
+│ L2  VIRTUALIZATION                          │   │ Human Review         │
+│     KVM · QEMU · libvirt · Firecracker      │   │   ↓                  │
+├──────────────────────────────────────────────┤   │ Verify               │
+│ L1  LINUX SYSTEMS                           │   │ tests · logs · proof │
+│     C · Python · Go · Bash · automation     │   └──────────────────────┘
+└──────────────────────────────────────────────┘
+~~~
 
-I work near the boundary between **hardware and software**: virtual machines, Linux I/O, resource isolation, performance diagnosis, and the infrastructure that makes experiments reproducible. I use AI coding tools as engineering accelerators—not as substitutes for code review, tests, logs, or benchmarks.
+I work across the system stack: Linux internals and automation, virtual-machine infrastructure, and cloud-native runtime integration. AI coding tools are part of the workflow, but generated changes still pass through human review and executable verification.
 
-## Engineering Snapshot
+## Selected experience
 
-### ⚙️ Reproducible Virtualization
+| Company | Selected work |
+| --- | --- |
+| **Hygon** | Contributed to a repeatable VM test-environment flow around image preparation, cloud-init, libvirt, boot checks, and Ansible; also handled customer issue diagnosis.<br><sub>Additional validation: comparable CubeSandbox runs and passthrough-network tuning; one single-port, one-way test result reached 130+ Gbps.</sub> |
+| **Iluvatar CoreX** | Developed GPU Device Plugin and Container Toolkit components; built a Dify/RAG workflow for compiler-log retrieval and assisted diagnosis. |
+| **Intel** | Contributed to ACRN validation, code quality, and upstream changes; implemented infrastructure-provider integrations and Kubernetes-managed edge simulations. |
+| **Baidu** | Maintained a libvirt/QEMU platform, diagnosed hot-migration failures, and improved VF permission controls for virtualized SSD I/O paths. |
+| **Shannon Systems** | Implemented SSD FTL address translation and metadata handling; participated in distributed-storage feasibility validation involving ZooKeeper, consistent hashing, and RDMA. |
 
-Contributed to workflows around KVM, QEMU, libvirt, Firecracker, cloud-init, CPU pinning, NUMA, huge pages, and automated guest configuration.
+## Vibe Coding, with a gate
 
-### 📈 Performance Engineering
+~~~text
+Claude Code / Codex / Kimi
+            ↓
+Human review: code review
+            ↓
+Verification: automated tests · logs · benchmarks
+~~~
 
-Benchmark-driven diagnosis across x86 platforms, with controlled comparisons for CPU, memory, I/O, interrupt affinity, thread models, and virtualization overhead.
+I use Claude Code, Codex, and Kimi as coding tools. Generated changes go through human review and verification with automated tests, logs, and benchmarks.
 
-### 🌐 High-Performance I/O
+## Public work
 
-Contributed to passthrough-network performance diagnosis involving SWIOTLB, IOMMU, NUMA/IRQ affinity, and guest memory encryption; a tuned test setup reached **130+ Gbps single-port, one-way throughput**.
+### ACRN Hypervisor · 8 merged pull requests
 
-### 🤖 Practical AI Infrastructure
-
-Worked on GPU device allocation, container runtime injection, and Dify/RAG workflows. AI-assisted changes are checked through human review and executable evidence.
-
-## Selected Engineering
-
-- **Hygon VM lab automation** — contributed to a repeatable deployment flow covering image preparation, disk creation, cloud-init, libvirt definition, boot checks, and Ansible configuration, with YAML specs, NUMA/CPU pinning, and huge-page support.
-- **Sandbox performance validation** — participated in controlled, comparable CubeSandbox benchmark runs across AMD EPYC and Hygon 7447V/7490 platforms.
-- **Firecracker reliability and portability** — worked on a pause/resume failure path, multi-cloud agent-sandbox adaptation, and cross-generation Intel CPU compatibility for cold migration.
-- **Virtualization and edge systems** — contributed to libvirt/QEMU migration, SR-IOV isolation, Kubernetes-managed edge nodes, MQTT/Operator control paths, and ACRN validation.
-
-## Experience at a Glance
-
-- **Hygon** · System Optimization Engineer · 2026–present — VM test-environment automation, cross-platform sandbox benchmarks, customer issue diagnosis, and passthrough-network performance tuning.
-- **PPIO** · Senior Backend Engineer · 2025–2026 — Firecracker lifecycle reliability, sandbox adaptation across cloud environments, and cross-generation CPU compatibility for cold migration.
-- **Iluvatar CoreX** · AI Infrastructure Architect · 2024–2025 — GPU Device Plugin and Container Toolkit development, topology-aware allocation, and Dify/RAG-assisted log analysis.
-- **Intel** · Virtualization and Edge Software Engineering · 2018–2021, 2022–2024 — ACRN validation and code quality, infrastructure-provider integrations, Kubernetes-managed edge simulation, and weak-network device control.
-- **Baidu** · Virtualization Engineer · 2021–2022 — libvirt/QEMU platform maintenance, hot-migration fault diagnosis, and SR-IOV SSD isolation.
-- **Shannon Systems** · Storage Systems Engineer · 2016–2018 — SSD FTL and key-value optimizations, distributed-storage validation, and RDMA-based data paths.
-
-## Public Work
-
-### [Intent Anchor](https://github.com/huix-shh/intent-anchor) · Experimental
-
-An early-stage Agent Skill exploring how autonomous work can stay aligned with the user's real objective as plans, evidence, and methods evolve.
-
-`Agent Skills` `AI Engineering` `Reliability` `MIT`
-
-### ACRN Hypervisor
-
-Authored **8 merged pull requests** to [projectacrn/acrn-hypervisor](https://github.com/projectacrn/acrn-hypervisor) in 2019, focused on hypervisor code quality and maintainability. Representative changes:
+Public upstream changes focused on code quality and maintainability:
 
 - [#3342 — Clean up vCPU code for static analysis](https://github.com/projectacrn/acrn-hypervisor/pull/3342)
 - [#3373 — Remove dead instruction-emulation code](https://github.com/projectacrn/acrn-hypervisor/pull/3373)
 - [#3580 — Fix type-conversion and return-value coding-guideline violations](https://github.com/projectacrn/acrn-hypervisor/pull/3580)
 
-Count and merge status were verified from public GitHub records on **2026-09-01**.
+New public contributions will be added here only after the corresponding PR or commit is inspectable.
 
 ## Toolbox
 
-<div align="center">
+code: C · Python · Go · Bash
 
-<img src="https://skillicons.dev/icons?i=c,python,go,bash,linux,docker,kubernetes,ansible,git,github,vscode&perline=11" alt="C, Python, Go, Bash, Linux, Docker, Kubernetes, Ansible, Git, GitHub, and VS Code" />
+systems: Linux · KVM · QEMU · libvirt · Firecracker · cloud-init · systemd
 
-`KVM` · `QEMU` · `libvirt` · `Firecracker` · `containerd` · `runc` · `cloud-init` · `systemd` · `fio`
+cloud_native: Kubernetes · containerd · runc · Ansible
 
-</div>
+## Connect
 
-
-## Let's Connect
-
-<div align="center">
-
-[![Email](https://img.shields.io/badge/Email-sfz200809242719%40gmail.com-0f172a?style=for-the-badge&labelColor=0f172a)](mailto:sfz200809242719@gmail.com)
-[![GitHub](https://img.shields.io/badge/GitHub-huix--shh-0f172a?style=for-the-badge&logo=github&logoColor=22d3ee)](https://github.com/huix-shh)
-
-<sub>Interested in virtualization, performance engineering, systems tooling, and practical AI infrastructure.</sub>
-
-</div>
+[![Email](https://img.shields.io/badge/Email-sfz200809242719%40gmail.com-10251f?style=flat-square&logo=gmail&logoColor=79f2c0)](mailto:sfz200809242719@gmail.com)
+[![GitHub](https://img.shields.io/badge/GitHub-huix--shh-10251f?style=flat-square&logo=github&logoColor=79f2c0)](https://github.com/huix-shh)

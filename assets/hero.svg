@@ -1,108 +1,72 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
-  <title id="title">huix-shh — Systems, Virtualization, AI Infrastructure</title>
-  <desc id="desc">Animated dark technical banner with a circuit grid, performance traces, and cyan-violet gradients.</desc>
-
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">huix-shh — systems work made visible</title>
+  <desc id="desc">A system cutaway showing Linux Systems, Virtualization, and Cloud Native layers beside a Vibe Coding build, review, and verify workflow.</desc>
   <defs>
-    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#050816"/>
-      <stop offset="0.48" stop-color="#071b31"/>
-      <stop offset="1" stop-color="#120b2b"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071012"/>
+      <stop offset="0.55" stop-color="#0a1819"/>
+      <stop offset="1" stop-color="#11142a"/>
     </linearGradient>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#22d3ee"/>
-      <stop offset="0.52" stop-color="#38bdf8"/>
-      <stop offset="1" stop-color="#a78bfa"/>
+      <stop offset="0" stop-color="#79f2c0"/>
+      <stop offset="0.55" stop-color="#69d7e8"/>
+      <stop offset="1" stop-color="#b8a2ff"/>
     </linearGradient>
-    <radialGradient id="glowCyan" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.24"/>
-      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowViolet" cx="50%" cy="50%" r="50%">
-      <stop offset="0" stop-color="#a78bfa" stop-opacity="0.20"/>
-      <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
-    </radialGradient>
-    <pattern id="grid" width="36" height="36" patternUnits="userSpaceOnUse">
-      <path d="M 36 0 L 0 0 0 36" fill="none" stroke="#7dd3fc" stroke-opacity="0.08" stroke-width="1"/>
-    </pattern>
-    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-      <feGaussianBlur stdDeviation="5" result="blur"/>
-      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
-    </filter>
-    <clipPath id="panelClip">
-      <rect x="24" y="24" width="1152" height="312" rx="26"/>
-    </clipPath>
+    <linearGradient id="slab1" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#102a26"/><stop offset="1" stop-color="#0e2023"/></linearGradient>
+    <linearGradient id="slab2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#10262d"/><stop offset="1" stop-color="#121e34"/></linearGradient>
+    <linearGradient id="slab3" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#182139"/><stop offset="1" stop-color="#241b3d"/></linearGradient>
+    <pattern id="grid" width="42" height="42" patternUnits="userSpaceOnUse"><path d="M42 0H0V42" fill="none" stroke="#a8ffda" stroke-opacity=".055"/></pattern>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <clipPath id="clip"><rect x="20" y="20" width="1160" height="380" rx="26"/></clipPath>
     <style>
-      .mono { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace; }
-      .sans { font-family: Inter, "Segoe UI", Arial, sans-serif; }
-      .pulse { animation: pulse 2.8s ease-in-out infinite; transform-origin: center; }
-      .pulse-late { animation: pulse 2.8s 1.15s ease-in-out infinite; transform-origin: center; }
-      .dash { stroke-dasharray: 9 14; animation: dash 11s linear infinite; }
-      .scan { animation: scan 7s ease-in-out infinite; }
-      @keyframes pulse { 0%, 100% { opacity: .45; } 50% { opacity: 1; } }
-      @keyframes dash { to { stroke-dashoffset: -230; } }
-      @keyframes scan { 0%, 100% { transform: translateX(-280px); opacity: 0; } 18%, 82% { opacity: .55; } 50% { transform: translateX(1200px); } }
-      @media (prefers-reduced-motion: reduce) {
-        .pulse, .pulse-late, .dash, .scan { animation: none; }
-        .pulse, .pulse-late { opacity: .75; }
-        .scan { opacity: 0; transform: none; }
-      }
+      .sans{font-family:Inter,"Segoe UI",Arial,sans-serif}.mono{font-family:"SFMono-Regular",Consolas,monospace}
+      .signal{stroke-dasharray:7 11;animation:signal 9s linear infinite}.pulse{animation:pulse 2.6s ease-in-out infinite}.pulse2{animation:pulse 2.6s 1.1s ease-in-out infinite}
+      @keyframes signal{to{stroke-dashoffset:-180}}@keyframes pulse{0%,100%{opacity:.35}50%{opacity:1}}
+      @media(prefers-reduced-motion:reduce){.signal,.pulse,.pulse2{animation:none}.pulse,.pulse2{opacity:.8}}
     </style>
   </defs>
-
-  <rect width="1200" height="360" fill="#020617"/>
-  <rect x="24" y="24" width="1152" height="312" rx="26" fill="url(#background)" stroke="#38bdf8" stroke-opacity="0.28"/>
-
-  <g clip-path="url(#panelClip)">
-    <rect x="24" y="24" width="1152" height="312" fill="url(#grid)"/>
-    <ellipse cx="190" cy="78" rx="330" ry="250" fill="url(#glowCyan)"/>
-    <ellipse cx="1040" cy="312" rx="350" ry="260" fill="url(#glowViolet)"/>
-
-    <path class="dash" d="M24 273 C210 195 305 335 480 247 S760 144 932 226 1090 286 1176 201" fill="none" stroke="url(#accent)" stroke-width="2" stroke-opacity="0.62"/>
-    <path d="M24 290 C245 240 316 318 498 271 S786 200 924 259 1080 302 1176 247" fill="none" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.18"/>
-
-    <g transform="translate(902 66)" fill="none" stroke="#67e8f9" stroke-opacity="0.62">
-      <path d="M0 38 H62 V0 H132"/>
-      <path d="M28 78 H96 V42 H188"/>
-      <path d="M0 118 H52 V158 H174"/>
-      <path d="M70 118 H118 V92 H212"/>
-      <circle class="pulse" cx="0" cy="38" r="4" fill="#22d3ee" stroke="none"/>
-      <circle class="pulse-late" cx="132" cy="0" r="4" fill="#a78bfa" stroke="none"/>
-      <circle class="pulse" cx="188" cy="42" r="4" fill="#38bdf8" stroke="none"/>
-      <circle class="pulse-late" cx="174" cy="158" r="4" fill="#22d3ee" stroke="none"/>
-      <circle class="pulse" cx="212" cy="92" r="4" fill="#a78bfa" stroke="none"/>
-    </g>
-
-    <rect class="scan" x="0" y="24" width="170" height="312" fill="url(#glowCyan)" opacity="0.35"/>
+  <rect width="1200" height="420" fill="#041012"/>
+  <rect x="20" y="20" width="1160" height="380" rx="26" fill="url(#bg)" stroke="#79f2c0" stroke-opacity=".25"/>
+  <g clip-path="url(#clip)">
+    <rect x="20" y="20" width="1160" height="380" fill="url(#grid)"/>
+    <circle cx="1050" cy="30" r="260" fill="#69d7e8" opacity=".045"/>
+    <circle cx="310" cy="420" r="300" fill="#79f2c0" opacity=".035"/>
   </g>
-
-  <g transform="translate(82 83)">
-    <g class="mono" font-size="14" letter-spacing="2.2" fill="#7dd3fc">
-      <circle cx="6" cy="-5" r="5" fill="#22d3ee" filter="url(#softGlow)"/>
-      <text x="22" y="0">SYSTEM STATUS: BUILDING</text>
-    </g>
-
-    <text class="sans" x="0" y="78" fill="#f8fafc" font-size="57" font-weight="760" letter-spacing="1">HUIX-SHH</text>
-    <rect x="0" y="97" width="635" height="4" rx="2" fill="url(#accent)"/>
-    <text class="mono" x="0" y="139" fill="#cbd5e1" font-size="19" letter-spacing="1.6">SYSTEMS · VIRTUALIZATION · AI INFRA</text>
-
-    <g class="mono" font-size="13" font-weight="600" letter-spacing="1">
-      <g transform="translate(0 174)">
-        <rect width="160" height="34" rx="17" fill="#082f49" stroke="#22d3ee" stroke-opacity="0.72"/>
-        <text x="80" y="22" fill="#67e8f9" text-anchor="middle">KVM / QEMU</text>
-      </g>
-      <g transform="translate(174 174)">
-        <rect width="174" height="34" rx="17" fill="#172554" stroke="#38bdf8" stroke-opacity="0.72"/>
-        <text x="87" y="22" fill="#7dd3fc" text-anchor="middle">PERFORMANCE</text>
-      </g>
-      <g transform="translate(362 174)">
-        <rect width="188" height="34" rx="17" fill="#2e1065" stroke="#a78bfa" stroke-opacity="0.72"/>
-        <text x="94" y="22" fill="#c4b5fd" text-anchor="middle">C · PYTHON · GO</text>
-      </g>
+  <g transform="translate(68 58)">
+    <circle class="pulse" cx="5" cy="-4" r="5" fill="#79f2c0" filter="url(#glow)"/>
+    <text class="mono" x="22" y="0" fill="#79f2c0" font-size="13" letter-spacing="2">SYSTEMS ENGINEER</text>
+    <text class="sans" x="0" y="70" fill="#e8fff5" font-size="48" font-weight="750" letter-spacing="-1.8">SYSTEMS WORK,</text>
+    <text class="sans" x="0" y="122" fill="url(#accent)" font-size="48" font-weight="750" letter-spacing="-1.8">MADE VISIBLE.</text>
+    <text class="mono" x="0" y="165" fill="#9bb6ad" font-size="14" letter-spacing="1.3">HUIX-SHH / BUILD · REVIEW · VERIFY</text>
+    <g transform="translate(0 205)" class="mono" font-size="12" font-weight="700">
+      <rect width="130" height="31" rx="8" fill="#102a26" stroke="#79f2c0" stroke-opacity=".45"/><text x="65" y="20" fill="#a8ffda" text-anchor="middle">LINUX</text>
+      <rect x="142" width="164" height="31" rx="8" fill="#10262d" stroke="#69d7e8" stroke-opacity=".45"/><text x="224" y="20" fill="#9ce9f3" text-anchor="middle">VIRTUALIZATION</text>
+      <rect x="318" width="150" height="31" rx="8" fill="#241b3d" stroke="#b8a2ff" stroke-opacity=".45"/><text x="393" y="20" fill="#d0c4ff" text-anchor="middle">CLOUD NATIVE</text>
     </g>
   </g>
-
-  <g class="mono" transform="translate(1008 284)" font-size="12" fill="#94a3b8" text-anchor="end">
-    <text x="100" y="0">OPEN TO · YANGTZE RIVER DELTA</text>
-    <text x="100" y="22" fill="#67e8f9">10+ YEARS IN SYSTEMS</text>
+  <g transform="translate(610 61)">
+    <text class="mono" x="0" y="0" fill="#80a198" font-size="11" letter-spacing="2">SYSTEM CUTAWAY</text>
+    <g transform="translate(0 20)">
+      <rect x="0" y="0" width="360" height="66" rx="13" fill="url(#slab3)" stroke="#b8a2ff" stroke-opacity=".5"/>
+      <text class="mono" x="18" y="26" fill="#b8a2ff" font-size="11">L3</text><text class="sans" x="54" y="27" fill="#f0edff" font-size="18" font-weight="700">Cloud Native</text><text class="mono" x="54" y="48" fill="#aaa2c2" font-size="11">Kubernetes · runtimes · edge</text>
+      <rect x="0" y="76" width="360" height="66" rx="13" fill="url(#slab2)" stroke="#69d7e8" stroke-opacity=".5"/>
+      <text class="mono" x="18" y="102" fill="#69d7e8" font-size="11">L2</text><text class="sans" x="54" y="103" fill="#e9fbff" font-size="18" font-weight="700">Virtualization</text><text class="mono" x="54" y="124" fill="#93b2b8" font-size="11">KVM · QEMU · libvirt · ACRN</text>
+      <rect x="0" y="152" width="360" height="66" rx="13" fill="url(#slab1)" stroke="#79f2c0" stroke-opacity=".5"/>
+      <text class="mono" x="18" y="178" fill="#79f2c0" font-size="11">L1</text><text class="sans" x="54" y="179" fill="#ebfff6" font-size="18" font-weight="700">Linux Systems</text><text class="mono" x="54" y="200" fill="#91afa5" font-size="11">code · automation · I/O</text>
+      <rect x="0" y="230" width="360" height="30" rx="8" fill="#0b1719" stroke="#a8ffda" stroke-opacity=".14"/>
+      <text class="mono" x="180" y="249" fill="#708b82" font-size="10" letter-spacing="1.1" text-anchor="middle">CPU / GPU / STORAGE / NETWORK</text>
+    </g>
+    <g transform="translate(383 20)">
+      <rect width="119" height="260" rx="16" fill="#0d1b1d" stroke="#ffc978" stroke-opacity=".45"/>
+      <text class="mono" x="59.5" y="25" fill="#ffc978" font-size="10" font-weight="700" text-anchor="middle" letter-spacing="1">VIBE CODING</text>
+      <g class="mono" font-size="10" text-anchor="middle">
+        <circle class="pulse" cx="59.5" cy="67" r="17" fill="#173127" stroke="#79f2c0"/><text x="59.5" y="71" fill="#a8ffda">BUILD</text>
+        <path class="signal" d="M59.5 86V111" stroke="#ffc978"/>
+        <circle class="pulse2" cx="59.5" cy="132" r="17" fill="#182732" stroke="#69d7e8"/><text x="59.5" y="136" fill="#9ce9f3">REVIEW</text>
+        <path class="signal" d="M59.5 151V176" stroke="#ffc978"/>
+        <circle class="pulse" cx="59.5" cy="197" r="17" fill="#291f35" stroke="#b8a2ff"/><text x="59.5" y="201" fill="#d0c4ff">VERIFY</text>
+      </g>
+      <text class="mono" x="59.5" y="238" fill="#806d4b" font-size="9" text-anchor="middle">HUMAN GATE</text>
+    </g>
   </g>
 </svg>
